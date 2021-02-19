@@ -15,5 +15,12 @@
       <jdbc-url>jdbc:mariadb://101.101.217.228:3306/matcher</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="batch@101.101.217.228" uuid="49c2d6c0-aba3-41d2-85d3-ecb4367ce602">
+      <driver-ref>mariadb</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.mariadb.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mariadb://101.101.217.228:3306/batch</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
