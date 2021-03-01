@@ -26,8 +26,6 @@ class LoadMatchListProcessor (
     }
 
     override fun process(item: Summoner): List<MatchList> {
-        // Avoid Too many request
-        Thread.sleep(100L)
         var resultSet = mutableListOf<MatchList>()
         val accountId = item.accountId
         logger.info("---- Request API to get match list By AccountId [ $accountId ] ")

@@ -21,7 +21,7 @@ class RiotServiceWrapper (private val riotAPI: RiotAPI) {
         // wait and callback for avoiding 504 Response
         while( summoner == null ) {
             logger.warn("Retry Request")
-            // Thread.sleep(1000L)
+            Thread.sleep(500L)
             summoner = riotAPI.getSummonerByAccountId(accountId).block()
         }
         return summoner
@@ -32,7 +32,7 @@ class RiotServiceWrapper (private val riotAPI: RiotAPI) {
         // matchDetail Retrying calls until Avoiding 504 Response.
         while (matchDetail == null) {
             logger.warn("Retry Request")
-            // Thread.sleep(1000L)
+            Thread.sleep(500L)
             matchDetail = riotAPI.getMatchById(matchId).block()
         }
         return matchDetail
@@ -75,7 +75,7 @@ class RiotServiceWrapper (private val riotAPI: RiotAPI) {
             // If 504 Error occurred, wait and retry with kept indexes
             else {
                 logger.warn("Retry Request")
-                Thread.sleep(1000L)
+                Thread.sleep(500L)
             }
         }
         return matchList

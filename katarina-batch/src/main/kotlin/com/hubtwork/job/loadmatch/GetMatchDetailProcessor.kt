@@ -17,8 +17,6 @@ class GetMatchDetailProcessor (
     }
 
     override fun process(item: MatchList): MatchList? {
-        // Avoid Too many request
-        Thread.sleep(100L)
         logger.info("Get MatchData from API [ matchId : {} ]", item.matchId)
         val matchData = coreService.getMatchDataFromAPI(item.matchId)
         val matchString = gson.toJson(matchData)
